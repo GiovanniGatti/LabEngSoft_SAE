@@ -1,6 +1,6 @@
-class DeviseCreatePessoas < ActiveRecord::Migration
+class DeviseCreateMedicos < ActiveRecord::Migration
   def change
-    create_table(:pessoas) do |t|
+    create_table(:medicos) do |t|
       ## Database authenticatable
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""
@@ -34,16 +34,17 @@ class DeviseCreatePessoas < ActiveRecord::Migration
       # t.string :authentication_token
 
       t.string :nome
-      t.string :RG
+      t.text :endereco
       t.string :CPF
+      t.string :CRM
 
       t.timestamps
     end
 
-    add_index :pessoas, :email,                :unique => true
-    add_index :pessoas, :reset_password_token, :unique => true
-    # add_index :pessoas, :confirmation_token,   :unique => true
-    # add_index :pessoas, :unlock_token,         :unique => true
-    # add_index :pessoas, :authentication_token, :unique => true
+    add_index :medicos, :email,                :unique => true
+    add_index :medicos, :reset_password_token, :unique => true
+    # add_index :medicos, :confirmation_token,   :unique => true
+    # add_index :medicos, :unlock_token,         :unique => true
+    # add_index :medicos, :authentication_token, :unique => true
   end
 end
